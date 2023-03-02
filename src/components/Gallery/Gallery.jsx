@@ -48,7 +48,6 @@ const Gallery = () => {
     setItems([]);
     setPage(1);
     setsearchQuery(query);
-    // this.setState({ items: [], page: 1, searchQuery: query });
   };
 
   const onLoadMore = () => {

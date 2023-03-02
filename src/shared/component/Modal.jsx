@@ -11,11 +11,14 @@ const Modal = ({ children, close }) => {
       close();
     }
   };
-  const addEsc = document.body.addEventListener('keydown', onClickEsc);
 
   useEffect(() => {
-    document.body.removeEventListener('keydown', onClickEsc);
-  }, []);
+    document.body.addEventListener('keydown', onClickEsc);
+
+    return () => {
+      document.body.removeEventListener('keydown', onClickEsc);
+    };
+  });
 
   const handleClose = ({ target, currentTarget }) => {
     if (target === currentTarget) {
